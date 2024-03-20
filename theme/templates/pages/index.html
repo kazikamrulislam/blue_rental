@@ -1,6 +1,124 @@
-{% extends "base.html" %} {% block content %}
-    <div class="mx-auto my-10">
-        <h1 class="text-4xl">HOME</h1>
-        <p class="font-bold">Hi There</p>
+{% extends "base.html" %} 
+{% block content %}
+{% load static %}
+    <div class="mx-auto mt-[-156px] pt-[265px] pb-[195px] text-center" style="background: url('../../../static/img/blue_bg.png') no-repeat bottom center/cover">
+        <div class="container">
+            <h1 class="text-6xl font-bold text-center text-[#FFFFFF] drop-shadow-[0_35px_35px_rgba(0,0,0,0.50)]">Find Your Next Apartment</h1>
+            <div class="relative w-[400px] my-0 mx-auto">
+                <input type="search" name="serch" placeholder="Search" class="bg-white w-full h-10 px-5 pr-10 rounded-full text-sm focus:outline-none">
+                <button type="submit" class="absolute right-0 top-0 mt-3 mr-4">
+                    <svg class="h-4 w-4 fill-current" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 56.966 56.966" style="enable-background:new 0 0 56.966 56.966;" xml:space="preserve" width="512px" height="512px">
+                    <path d="M55.146,51.887L41.588,37.786c3.486-4.144,5.396-9.358,5.396-14.786c0-12.682-10.318-23-23-23s-23,10.318-23,23  s10.318,23,23,23c4.761,0,9.298-1.436,13.177-4.162l13.661,14.208c0.571,0.593,1.339,0.92,2.162,0.92  c0.779,0,1.518-0.297,2.079-0.837C56.255,54.982,56.293,53.08,55.146,51.887z M23.984,6c9.374,0,17,7.626,17,17s-7.626,17-17,17  s-17-7.626-17-17S14.61,6,23.984,6z"/>
+                    </svg>
+                </button>
+            </div>
+            <p class="text-3xl font-bold text-center text-[#FFFFFF] drop-shadow-xl">Landlords List Your Apartment For Free</p>
+            <button type="button" class="text-white text-[20px] bg-[#6aab34] focus:outline-none font-medium rounded-full text-sm px-8 py-4 text-center">List Today</button>
+        </div>  
+    </div>
+    <div class="start_today container mx-auto text-center py-[50px]">
+        <h2 class="text-[50px] text-[#121212] w-1/2 text-center mx-auto pb-[20px]">Thinking of Buying or Selling A Multi-Family Home?</h2>
+        <button type="button" class="text-white text-[20px] bg-[#6aab34] focus:outline-none font-medium rounded-full text-sm px-8 py-4 text-center">Start Today</button>
+    </div>
+    <div class="card_slider py-4">
+        <div class="container mx-auto">
+            <div class="swiper mySwiper w-[80%]">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="card">
+                            <img src="{% static 'img/card-1.png'%}" alt="Blue_Logo">
+                            <div class="text-left">
+                                <p>$638,700</p>
+                                <span>2 Bed  1 Bath  784 Sq. Ft.</span>
+                                <h3>207 Crescent St Road 2nd Floor Boston, MA 02116</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="card">
+                            <img src="{% static 'img/card-1.png'%}" alt="Blue_Logo">
+                            <div class="text-left">
+                                <p>$638,700</p>
+                                <span>2 Bed  1 Bath  784 Sq. Ft.</span>
+                                <h3>207 Crescent St Road 2nd Floor Boston, MA 02116</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="card">
+                            <img src="{% static 'img/card-1.png'%}" alt="Blue_Logo">
+                            <div class="text-left">
+                                <p>$638,700</p>
+                                <span>2 Bed  1 Bath  784 Sq. Ft.</span>
+                                <h3>207 Crescent St Road 2nd Floor Boston, MA 02116</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="card">
+                            <img src="{% static 'img/card-1.png'%}" alt="Blue_Logo">
+                            <div class="text-left">
+                                <p>$638,700</p>
+                                <span>2 Bed  1 Bath  784 Sq. Ft.</span>
+                                <h3>207 Crescent St Road 2nd Floor Boston, MA 02116</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="card">
+                            <img src="{% static 'img/card-1.png'%}" alt="Blue_Logo">
+                            <div class="text-left">
+                                <p>$638,700</p>
+                                <span>2 Bed  1 Bath  784 Sq. Ft.</span>
+                                <h3>207 Crescent St Road 2nd Floor Boston, MA 02116</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="card">
+                            <img src="{% static 'img/card-1.png'%}" alt="Blue_Logo">
+                            <div class="text-left">
+                                <p>$638,700</p>
+                                <span>2 Bed  1 Bath  784 Sq. Ft.</span>
+                                <h3>207 Crescent St Road 2nd Floor Boston, MA 02116</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="card">
+                            <img src="{% static 'img/card-1.png'%}" alt="Blue_Logo">
+                            <div class="text-left">
+                                <p>$638,700</p>
+                                <span>2 Bed  1 Bath  784 Sq. Ft.</span>
+                                <h3>207 Crescent St Road 2nd Floor Boston, MA 02116</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="card">
+                            <img src="{% static 'img/card-1.png'%}" alt="Blue_Logo">
+                            <div class="text-left">
+                                <p>$638,700</p>
+                                <span>2 Bed  1 Bath  784 Sq. Ft.</span>
+                                <h3>207 Crescent St Road 2nd Floor Boston, MA 02116</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="card">
+                            <img src="{% static 'img/card-1.png'%}" alt="Blue_Logo">
+                            <div class="text-left">
+                                <p>$638,700</p>
+                                <span>2 Bed  1 Bath  784 Sq. Ft.</span>
+                                <h3>207 Crescent St Road 2nd Floor Boston, MA 02116</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
     </div>
 {% endblock %}

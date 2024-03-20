@@ -8,15 +8,58 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta http-equiv="X-UA-Compatible" content="ie=edge">
 		{% tailwind_css %}
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+		<style>
+			{% comment %} .swiper {
+			width: 100%;
+			} {% endcomment %}
+
+			.swiper-slide {
+			text-align: center;
+			font-size: 18px;
+			background: #fff;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			}
+
+			.swiper-slide img {
+			display: block;
+			width: 100%;
+			object-fit: cover;
+			}
+
+			.swiper {
+			margin-left: auto;
+			margin-right: auto;
+			}
+		</style>
 	</head>
 
 	<body class="bg-gray-50 leading-normal tracking-normal">
 		{% include "partials/_navbar.html" %}
-		<div class="container mx-auto mt-10">
-			<section class="">
-				{% block content %} {% endblock content %}
+			<section class="main">
+				{% block content %} {% endblock %}
 			</section>
-		</div>
+
 		{% include "partials/_footer.html" %}
+
+		<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+		<!-- Initialize Swiper -->
+		<script>
+			var swiper = new Swiper(".mySwiper", {
+			slidesPerView: 3,
+			spaceBetween: 30,
+			loop: true,
+			pagination: {
+				el: ".swiper-pagination",
+				clickable: true,
+			},
+			navigation: {
+				nextEl: ".swiper-button-next",
+				prevEl: ".swiper-button-prev",
+			},
+			});
+		</script>
 	</body>
 </html>
