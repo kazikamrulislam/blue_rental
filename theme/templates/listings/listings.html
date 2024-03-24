@@ -1,6 +1,46 @@
-{% extends "base.html" %} {% block content %}
+{% extends "base.html" %} 
+{% load static %}
+{% load humanize %}
+{% block title %} | Browse Property Listings {% endblock %}
+{% block content %}
     <div class="mx-auto my-10">
         <h1 class="text-4xl">All LISTING</h1>
         <p>All Listings are here</p>
+        {% if listings %}
+            {% for listing in listings %}
+                <div class="relative m-10 flex w-full max-w-xs flex-col overflow-hidden rounded-lg border border-gray-100 bg-white shadow-md">
+                    <a class="relative mx-3 mt-3 flex h-60 overflow-hidden rounded-xl" href="#">
+                        <img class="object-cover" src="{{ listing.photo_main.url }}" alt="Proparty image" />
+                        <span class="absolute top-0 left-0 m-2 rounded-full bg-black px-2 text-center text-sm font-medium text-white">{{ listing.property_status}} </span>
+                    </a>
+                    <div class="mt-2 px-5 flex items-center justify-between">
+                        <p>
+                            <span class="text-3xl font-bold text-slate-900">${{ listing.monthly_rent}}</span>
+                            {% comment %} <span class="text-sm text-slate-900 line-through">$699</span> {% endcomment %}
+                        </p>
+                    </div>
+                    {% comment %} <div class="aminities mt-2 px-5">
+                        {% for amenities in listing.amenities.all %}
+                            <span class="pr-3">{{ amenities.name }}</span>
+                        {% endfor %}
+                    </div> {% endcomment %}
+                    <div class="mt-2 px-5">
+                    <span class="pr-3">{{ listing.bedrooms}} Bed</span>
+                    <span class="pr-3">{{ listing.bathrooms}} Bath</span>
+                    <span class="pr-3">{{ listing.sqft}} Sq. Ft</span>
+                    </div>
+                    <div class="mt-4 px-5 pb-5">
+                        <a href="{% url 'listing' listing.id %}">
+                        {% comment %} <h2 class="text-xl tracking-tight text-slate-900">{{ listing.title }}</h2> {% endcomment %}
+                        <h3>{{ listing.address}}</h3>
+                        </a>
+                    </div>
+                </div>
+            {% endfor %}
+        {% else %}
+            <div class="col-md-12">
+                <p>No Listings available </p>
+            </div>
+        {% endif %}
     </div>
 {% endblock %}
