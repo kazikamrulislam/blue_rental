@@ -40,6 +40,17 @@ class Address(models.Model):
         return f"{self.street_address}, {self.city}, {self.state}, {self.postal_code}, {self.country}"
 
 class Listing(models.Model):
+    FOR_RENT = 'card_label_for_rent'
+    COMMING_SOON = 'card_label_comming_soon'
+    FOR_SALE = 'card_label_for_sale'
+    SOLD = 'card_label_sold'
+
+    LABLE_CLASS = [
+        (FOR_RENT, 'For Rent'),
+        (COMMING_SOON, 'Comming Soon'),
+        (FOR_SALE, 'For Sale'),
+        (SOLD, 'Sold'),
+    ]
     title = models.CharField(max_length=200)
     address = models.ForeignKey(Address, on_delete=models.CASCADE)
     map_iframe = models.CharField(max_length=500, blank=True)
@@ -53,6 +64,7 @@ class Listing(models.Model):
     contact = models.ForeignKey(Realtor, on_delete=models.CASCADE)
     move_in_cost = models.ManyToManyField(Move_In_Cost, blank=True)
     property_status = models.ForeignKey(Property_Status, on_delete=models.CASCADE, blank=True, null=True)
+    lable_class = models.CharField(max_length=100, choices=LABLE_CLASS)
     video = models.FileField(upload_to='videos/%Y/%m/%d/', blank=True)
     photo_main = models.ImageField(upload_to='photos/%Y/%m/%d/')
     photo_1 = models.ImageField(upload_to='photos/%Y/%m/%d/', blank=True)

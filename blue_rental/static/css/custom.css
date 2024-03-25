@@ -1,0 +1,29 @@
+span.listing_card_overly {
+    display: none;
+}
+
+.listing_card:hover span.listing_card_overly{
+    display: block;
+}
+
+.listing_card:hover .card_label_for_rent,
+.listing_card:hover .card_label_comming_soon,
+.listing_card:hover .card_label_for_sale,
+.listing_card:hover .card_label_sold{
+    background: #FFFFFF;
+    color: #000000;
+}
+
+
+.card_label_for_rent{
+    background: #cc2525;
+}
+.card_label_comming_soon{
+    background: #e2ac07;
+}
+.card_label_for_sale{
+    background: #1c428f;
+}
+.card_label_sold{
+    background: #cc2525;
+}
