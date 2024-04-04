@@ -4,11 +4,16 @@
     <div class="mx-auto my-10">
         <h1 class="text-4xl">LISTING</h1>
         <p>A Listing are here</p>
-        <video width="527" height="351" controls>
+        {% comment %} <video width="527" height="351" controls>
             <source src="{{listing.video.url}}" type="video/mp4">
             Your browser does not support the video tag.
-        </video>
+        </video> {% endcomment %}
         <img class="object-cover" src="{{ listing.photo_main.url }}" alt="Proparty image" />
         {{listing.title}}
+        <div class="aminities mt-2 px-5">
+            {% for amenities in listing.amenities.all %}
+                <span class="pr-3">{{ amenities.name }}</span>
+            {% endfor %}
+        </div>
     </div>
 {% endblock %}
